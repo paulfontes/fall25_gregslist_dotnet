@@ -27,7 +27,7 @@ INSERT INTO
         img_url,
         bedrooms,
         bathrooms,
-        stories
+        stories,
     )
 VALUES (
         675000,

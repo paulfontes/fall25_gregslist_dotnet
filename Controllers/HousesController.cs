@@ -19,4 +19,19 @@ public class HousesController : ControllerBase
         return "Houses Controller is ready to build 🛖";
     }
 
+    [HttpGet]
+    public ActionResult<List<House>> GetHouses()
+    {
+        try
+        {
+            List<House> houses = _housesService.GetHouses();
+            return Ok(houses);
+        }
+        catch (Exception exception)
+        {
+
+            return BadRequest(exception.Message);
+        }
+    }
+
 }
