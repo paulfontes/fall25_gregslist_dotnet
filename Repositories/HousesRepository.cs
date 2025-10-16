@@ -15,10 +15,6 @@ public class HousesRepository
         _db = db;
     }
 
-    internal House CreateHouse(House houseData)
-    {
-        throw new NotImplementedException();
-    }
 
     internal House GetHouseById(int houseId)
     {
@@ -38,7 +34,7 @@ public class HousesRepository
 
     }
 
-    internal House GetHouses(House houseData)
+    internal House CreateHouse(House houseData)
     {
         string sql = @"
     INSERT INTO
@@ -71,7 +67,7 @@ public class HousesRepository
         {
             house.Creator = account;
             return house;
-        }).SingleOrDefault();
+        }, houseData).SingleOrDefault();
 
         return house;
     }
